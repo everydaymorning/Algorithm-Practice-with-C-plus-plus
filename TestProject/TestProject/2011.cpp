@@ -21,7 +21,7 @@ int main() {
 			dp[i] = (dp[i - 1] + dp[i]) % 1000000;
 		}
 		if (i == 1) continue;
-		int tmp = (arr[i - 1] * 10) + arr[i];
+		int tmp = (arr[i - 1] * 10) + arr[i]; // i-1번째 자리 수 * 10 + i번째 자리 수를 더했을 때 10 ~ 26 사이 범위면 알파벳임
 		if (tmp >= 10 && tmp <= 26) {
 			dp[i] = (dp[i - 2] + dp[i]) % 1000000;
 		}
