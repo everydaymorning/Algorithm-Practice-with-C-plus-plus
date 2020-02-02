@@ -30,7 +30,6 @@ void dfs(int idx) {
 		return;
 	}
 
-
 	start.push_back(idx);
 	cout << "start idx: " << idx << '\n';
 	

@@ -20,7 +20,6 @@ void bfs(int a, int b) {
 	while (!q.empty()) {
 		auto cur = q.front();
 		q.pop();
-		
 		for (int dir = 0; dir < 4; dir++) {
 			int nx = cur.first + dx[dir];
 			int ny = cur.second + dy[dir];

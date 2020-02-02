@@ -8,6 +8,7 @@ int dy[4] = { 0,1,0,-1 };
 int n, m, t;
 int cnt;
 vector<int> v;
+
 void bfs(int i, int j) {
 	if (check[i][j] && arr[i][j] == 1) return;
 	queue<pair<int, int>> q;
@@ -30,7 +31,6 @@ void bfs(int i, int j) {
 			arr[nx][ny] = 1;
 			area++;
 		}
-		
 	}
 	v.push_back(area);
 }

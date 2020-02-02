@@ -13,7 +13,6 @@ void dfs(int idx, int cnt) {
 			}
 			cout << '\n';
 		}
-		
 		return;
 	}
 
@@ -49,7 +48,6 @@ int main() {
 
 	sort(alpha, alpha + c);
 	dfs(0, 0);
-
 
 	return 0;
 }
