@@ -14,85 +14,90 @@ queue<pair<int, int>> blue_q;
 void bfs() {
 	while (!red_q.empty()) {
 
-		auto red_cur = red_q.front();
-		red_x = red_cur.first;
-		red_y = red_cur.second;
-		//cout << "red_x: " << red_x << " red_y: " << red_y << '\n';
-		red_q.pop();
-		auto blue_cur = blue_q.front();
-		blue_x = blue_cur.first;
-		blue_y = blue_cur.second;
-		blue_q.pop();
+		int q_size = red_q.size();
 
-		if (cnt > 10) {
-			break;
-		}
-		
-		for (int dir = 0; dir < 4; dir++) {
+		cout << "q_size: " << q_size << '\n';
+		while (q_size--) {
+			auto red_cur = red_q.front();
+			red_x = red_cur.first;
+			red_y = red_cur.second;
+			cout << "red_x: " << red_x << " red_y: " << red_y << '\n';
+			red_q.pop();
+			auto blue_cur = blue_q.front();
+			blue_x = blue_cur.first;
+			blue_y = blue_cur.second;
+			blue_q.pop();
 
-			int red_nx = red_x + dx[dir];
-			int red_ny = red_y + dy[dir];
-
-			int blue_nx = blue_x + dx[dir];
-			int blue_ny = blue_y + dy[dir];
-
-			while (1) {
-				if (MAP[red_nx][red_ny] == '#') {
-					red_nx -= dx[dir];
-					red_ny -= dy[dir];
-					break;
-				}
-				if (MAP[red_nx][red_ny] == 'O') {
-					break;
-				}
-				red_nx += dx[dir];
-				red_ny += dy[dir];
-
+			if (cnt > 10) {
+				break;
 			}
-			//cout << "dir: " << dir << " red_nx: " << red_nx << "   red_ny: " << red_ny << '\n';
-			while (1) {
-				if (MAP[blue_nx][blue_ny] == '#') {
-					blue_nx -= dx[dir];
-					blue_ny -= dy[dir];
-					break;
-				}
-				if (MAP[blue_nx][blue_ny] == 'O') {
-					break;
-				}
-				blue_nx += dx[dir];
-				blue_ny += dy[dir];
-			}
-			//cout << "dir: " << dir << "  blue_nx: " << blue_nx << "   blue_ny: " << blue_ny << '\n';
 
-			if (blue_nx == es_x && blue_ny == es_y) continue;
-			if (red_nx == es_x && red_ny == es_y) {
+			if (red_x == es_x && red_y == es_y) {
 				//cout << "es_x: " << es_x << " es_y: " << es_y << '\n';
 				cout << "1";
 				return;
 			}
-			if (red_nx == blue_nx && red_ny == blue_ny) {
-				switch (dir) {
-				case 0: red_x > blue_x ? red_nx++ : blue_nx++; break; // »ó
-				case 1: red_x < blue_x ? red_nx-- : blue_nx--; break; // ÇÏ
-				case 2: red_y > blue_y ? red_ny++ : blue_ny++; break; // ÁÂ
-				case 3: red_y < blue_y ? red_ny-- : blue_ny--; break; // ¿ì
-				}
-				//cout << "°ãÃÆÀ» ¶§: " << "  red_nx: " << red_nx << "   red_ny: " << red_ny << "  blue_nx: " << blue_nx << "   blue_ny: " << blue_ny << '\n';
-			}
+			for (int dir = 0; dir < 4; dir++) {
 
-			if (check[red_nx][red_ny][blue_nx][blue_ny]) continue;
-			red_q.push({ red_nx, red_ny });
-			blue_q.push({ blue_nx, blue_ny });
-			//cout << "dir: " << dir << " red_nx: " << red_nx << "   red_ny: " << red_ny << '\n';
-			//cout << "dir: " << dir << "  blue_nx: " << blue_nx << "   blue_ny: " << blue_ny << '\n';
-			check[red_nx][red_ny][blue_nx][blue_ny] = true;
-			cnt++;
+				int red_nx = red_x + dx[dir];
+				int red_ny = red_y + dy[dir];
+
+				int blue_nx = blue_x + dx[dir];
+				int blue_ny = blue_y + dy[dir];
+
+				while (1) {
+					if (MAP[red_nx][red_ny] == '#') {
+						red_nx -= dx[dir];
+						red_ny -= dy[dir];
+						break;
+					}
+					if (MAP[red_nx][red_ny] == 'O') {
+						break;
+					}
+					red_nx += dx[dir];
+					red_ny += dy[dir];
+
+				}
+				cout << "dir: " << dir << " red_nx: " << red_nx << "   red_ny: " << red_ny << '\n';
+				while (1) {
+					if (MAP[blue_nx][blue_ny] == '#') {
+						blue_nx -= dx[dir];
+						blue_ny -= dy[dir];
+						break;
+					}
+					if (MAP[blue_nx][blue_ny] == 'O') {
+						break;
+					}
+					blue_nx += dx[dir];
+					blue_ny += dy[dir];
+				}
+				cout << "dir: " << dir << "  blue_nx: " << blue_nx << "   blue_ny: " << blue_ny << '\n';
+
+				if (blue_nx == es_x && blue_ny == es_y) continue;
+
+				if (red_nx == blue_nx && red_ny == blue_ny) {
+					switch (dir) {
+					case 0: red_x > blue_x ? red_nx++ : blue_nx++; break; // »ó
+					case 1: red_x < blue_x ? red_nx-- : blue_nx--; break; // ÇÏ
+					case 2: red_y > blue_y ? red_ny++ : blue_ny++; break; // ÁÂ
+					case 3: red_y < blue_y ? red_ny-- : blue_ny--; break; // ¿ì
+					}
+					//cout << "°ãÃÆÀ» ¶§: " << "  red_nx: " << red_nx << "   red_ny: " << red_ny << "  blue_nx: " << blue_nx << "   blue_ny: " << blue_ny << '\n';
+				}
+
+				if (check[red_nx][red_ny][blue_nx][blue_ny]) continue;
+				red_q.push({ red_nx, red_ny });
+				blue_q.push({ blue_nx, blue_ny });
+				cout << "dir: " << dir << " red_nx: " << red_nx << "   red_ny: " << red_ny << '\n';
+				cout << "dir: " << dir << "  blue_nx: " << blue_nx << "   blue_ny: " << blue_ny << '\n';
+				check[red_nx][red_ny][blue_nx][blue_ny] = true;
+			}
+			
 		}
-		
-		//cout << "cnt: " << cnt << '\n';
+		cnt++;
+		cout << "cnt: " << cnt << '\n';
 	}
 	cout << "0";
-
 }
 int main() {
 	cin.tie(0);
