@@ -21,7 +21,6 @@ void func(int _n, int _m, int cnt) {
 			arr[cnt] = arr2[i];
 			func(_n, _m, cnt + 1);
 
-
 		}
 	}
 }

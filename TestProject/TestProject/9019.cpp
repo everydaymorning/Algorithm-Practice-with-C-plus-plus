@@ -42,7 +42,6 @@ string bfs(int start) {
 			q.push(make_pair(nx, cur_y + "R"));
 		}
 	}
-
 }
 
 int main() {
