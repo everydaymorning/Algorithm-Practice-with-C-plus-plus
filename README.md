@@ -1,2 +1,1 @@
-# vscode19
-c++code
+# :star: Algorithm with C++ :star:
