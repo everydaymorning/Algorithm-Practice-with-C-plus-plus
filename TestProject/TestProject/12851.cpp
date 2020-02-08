@@ -3,7 +3,7 @@ using namespace std;
 int n, k;
 int cnt;
 int t;
-bool check[200001];
+bool check[100001];
 queue<pair<int, int>> q;
 void bfs() {
 	q.push({ n,0 });
@@ -21,16 +21,15 @@ void bfs() {
 			cnt++;
 		}
 		int nx = x - 1;
-		if (!check[nx] && nx >= 0) {
+		if (nx >= 0 && !check[nx]) {
 			q.push({ nx,y + 1 });
 		}
 		nx = x + 1;
-		if (!check[nx] && nx < 100001) {
+		if (nx < 100001 && !check[nx]) {
 			q.push({ nx, y + 1 });
-			
 		}
 		nx = 2 * x;
-		if (!check[nx] && nx < 100001) {
+		if (nx < 100001 && !check[nx]) {
 			q.push({ nx,y + 1 });
 		}
 	}

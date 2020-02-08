@@ -92,7 +92,6 @@ void bfs() {
 				cout << "dir: " << dir << "  blue_nx: " << blue_nx << "   blue_ny: " << blue_ny << '\n';
 				check[red_nx][red_ny][blue_nx][blue_ny] = true;
 			}
-			
 		}
 		cnt++;
 		cout << "cnt: " << cnt << '\n';
@@ -125,7 +124,5 @@ int main() {
 	red_q.push({ red_x, red_y });
 	blue_q.push({ blue_x, blue_y });
 	bfs();
-
-
 	return 0;
 }

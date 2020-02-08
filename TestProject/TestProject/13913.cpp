@@ -46,9 +46,7 @@ int main() {
 	cin.tie(0);
 	ios::sync_with_stdio(0);
 	cin >> n >> k;
-
 	bfs();
-	
 	cout << t << '\n';
 	for (int i = v.size() - 1; i >= 0; i--) {
 		cout << v[i] << " ";
