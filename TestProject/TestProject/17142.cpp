@@ -18,7 +18,7 @@ void setting() {
 				TEMP[i][j] = -1;
 			}
 			if (MAP[i][j] == 2) {
-				TEMP[i][j] = 0; // 비활성화 바이러스 -3
+				TEMP[i][j] = 0; // 비활성화 바이러스
 			}
 		}
 	}
