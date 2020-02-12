@@ -102,10 +102,8 @@ int main() {
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < n; j++) {
 			cin >> MAP[i][j];
-
 		}
 	}
-
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < n; j++) {
 			if (MAP[i][j] == 2) virus.push_back({ i,j });

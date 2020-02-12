@@ -26,7 +26,6 @@ void setting() {
 void bfs() {
 	int mx = 0;
 	queue<pair<int, int>> q;
-
 	for (int i = 0; i < tmp_virus.size(); i++) {
 		int x = tmp_virus[i].first;
 		int y = tmp_virus[i].second;

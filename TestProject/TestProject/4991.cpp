@@ -78,16 +78,16 @@ int main() {
 		int MIN = 2147483647;
 		do {
 			int sum = dist[0][v[0]];
-			//cout << "sum: " << sum << " ";
+			cout << "sum: " << sum << " ";
 			if (sum == 0) flag = true;
 			for (int i = 0; i < cnt-1; i++) {
 				sum += dist[v[i]][v[i + 1]];
-				//cout << "dist: " << dist[v[i]][v[i + 1]] << " " << '\n';
-				//cout << v[i] << " " << v[i + 1] << " " << '\n';
+				cout << "dist: " << dist[v[i]][v[i + 1]] << " " << '\n';
+				cout << v[i] << " " << v[i + 1] << " " << '\n';
 				if (dist[v[i]][v[i+1]] == 0) flag = true;
 			}
-			//cout << '\n';
-			//cout << "sum: " << sum << '\n';
+			cout << '\n';
+			cout << "sum: " << sum << '\n';
 			MIN = min(MIN, sum);
 		} while (next_permutation(v.begin(), v.end()));
 
