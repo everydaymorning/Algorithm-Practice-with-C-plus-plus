@@ -12,12 +12,10 @@ int dy[4] = { 0,0,-1,1 };
 queue<pair<int, int>> go;
 queue<pair<int, int>> water;
 void bfs() {
-
 	while (!go.empty()) {
 		int go_size = go.size();
 		int water_size = water.size();
 		while (water_size--) {
-
 			int water_x = water.front().first;
 			int water_y = water.front().second;
 			water.pop();
@@ -53,7 +51,6 @@ void bfs() {
 				go.push({ gnx,gny });
 			}
 		}
-		
 	}
 	cout << "KAKTUS";
 }

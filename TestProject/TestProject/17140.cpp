@@ -87,7 +87,6 @@ int main() {
 			}
 		}
 		else { // C¿¬»ê
-
 			for (int i = 1; i <= mx_c; i++) {
 				v.clear();
 				memset(arrCount, 0, sizeof(arrCount));
@@ -111,16 +110,10 @@ int main() {
 					MAP[k + 1][i] = y;
 					k += 2;
 				}
-
-
 			}
-			
 		}
 		cnt++;
-
 	}
-
-
 	return 0;
 
 }
