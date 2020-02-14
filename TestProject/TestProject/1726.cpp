@@ -3,7 +3,7 @@ using namespace std;
 int m, n, s_x, s_y, s_d, e_x, e_y, e_d;
 int MAP[101][101];
 bool check[101][101][5];
-int dx[4] = { 0,0,1,-1 };
+int dx[4] = { 0,0,1,-1 }; //동 서 남 북
 int dy[4] = { 1,-1,0,0 };
 void bfs() {
 	queue < pair<pair<int, int>, pair<int, int>>> q;
@@ -34,7 +34,7 @@ void bfs() {
 			//cout << "nx: " << nx << " ny: " << ny << " d: " << d << '\n';
 		}
 
-		for (int i = 1; i <= 4; i++) {
+		for (int i = 1; i <= 4; i++) { // 4방향 회전
 			if (d != i && !check[x][y][i]) {
 				check[x][y][i] = true;
 				if ((d == 1 && i == 2) || (d == 2 && i == 1) || (d == 3 && i == 4) || (d == 4 && i == 3)) {

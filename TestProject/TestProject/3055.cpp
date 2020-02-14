@@ -21,7 +21,7 @@ void bfs() {
 			int water_x = water.front().first;
 			int water_y = water.front().second;
 			water.pop();
-			check1[water_x][water_y] = true;
+			check[water_x][water_y] = true;
 			for (int dir = 0; dir < 4; dir++) {
 				int wnx = water_x + dx[dir];
 				int wny = water_y + dy[dir];

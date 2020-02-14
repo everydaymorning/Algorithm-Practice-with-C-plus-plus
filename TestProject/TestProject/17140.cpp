@@ -38,14 +38,11 @@ int main() {
 	ios::sync_with_stdio(0);
 	cin >> r >> c >> k;
 
-	int size_r = 3;
-	int size_c = 3;
-	for (int i = 1; i <= size_r; i++) {
-		for (int j = 1; j <= size_c; j++) {
+	for (int i = 1; i <= 3; i++) {
+		for (int j = 1; j <= 3; j++) {
 			cin >> MAP[i][j];
 		}
 	}
-
 	
 	while (1) {
 
@@ -89,7 +86,7 @@ int main() {
 				}
 			}
 		}
-		else {
+		else { // C¿¬»ê
 
 			for (int i = 1; i <= mx_c; i++) {
 				v.clear();

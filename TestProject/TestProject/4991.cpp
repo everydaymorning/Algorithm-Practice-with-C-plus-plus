@@ -8,6 +8,8 @@ bool visit[11];
 int dx[4] = { -1,1,0,0 };
 int dy[4] = { 0,0,-1,1 };
 int MIN = 2147483647;
+bool flag2;
+vector<int> vv;
 void bfs(int a, int b, int num) {
 	memset(check, false, sizeof(check));
 	queue<pair<pair<int, int>, int>> q;
@@ -33,6 +35,29 @@ void bfs(int a, int b, int num) {
 			q.push({ {nx,ny},d + 1 });
 			check[nx][ny] = true;
 		}
+	}
+}
+
+void P(int s, int cnt) {
+	if (s == cnt) {
+		int sum = dist[0][vv[0]];
+		if (sum == 0) flag2 = true;
+		for (int j = 0; j < cnt - 1; j++) {
+			sum += dist[vv[j]][vv[j + 1]];
+			if (dist[vv[j]][vv[j + 1]] == 0) flag2 = true;
+		}
+
+		MIN = min(MIN, sum);
+		return;
+	}
+
+	for (int i = 0; i < cnt; i++) {
+		if (visit[i]) continue;
+		visit[i] = true;
+		vv.push_back(i + 1);
+		P(s + 1, cnt);
+		vv.pop_back();
+		visit[i] = false;
 	}
 }
 int main() {
@@ -70,12 +95,12 @@ int main() {
 			trash.pop();
 		}
 		
-		vector<int> v;
+		/*vector<int> v;
 		for (int i = 1; i <= cnt; i++) {
 			v.push_back(i);
-		}
-		bool flag = false;
-		int MIN = 2147483647;
+		}*/
+		//bool flag = false;
+		/*int MIN = 2147483647;
 		do {
 			int sum = dist[0][v[0]];
 			cout << "sum: " << sum << " ";
@@ -89,10 +114,13 @@ int main() {
 			cout << '\n';
 			cout << "sum: " << sum << '\n';
 			MIN = min(MIN, sum);
-		} while (next_permutation(v.begin(), v.end()));
-
-		if (flag) cout << "-1" << '\n';
+		} while (next_permutation(v.begin(), v.end()));*/
+		P(0, cnt);
+		if (flag2) cout << "-1" << '\n';
 		else cout << MIN << '\n';
+
+		flag2 = false;
+		MIN = 2147483647;
 	}
 	return 0;
 }
