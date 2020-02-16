@@ -39,7 +39,6 @@ void bfs() {
 			q.push({ {nx,ny}, (dir + 2) % 4 });
 			cnt--;
 		}
-
 	}
 }
 int main() {
@@ -47,7 +46,6 @@ int main() {
 	ios::sync_with_stdio(0);
 	cin >> n >> m;
 	cin >> r >> c >> d;
-
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < m; j++) {
 			cin >> MAP[i][j];

@@ -73,7 +73,7 @@ int main() {
 					}
 				}
 
-				sort(v.begin(), v.end(), cmp_v);
+				sort(v.begin(), v.end(), cmp_v); // 정의한 함수대로 정렬
 				memset(MAP[i], 0, sizeof(MAP[i]));
 				int k = 1;
 				for (int j = 0; j < v.size(); j++) {
@@ -115,5 +115,4 @@ int main() {
 		cnt++;
 	}
 	return 0;
-
 }
