@@ -1,11 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 int N, L, R;
 int a, b;
 int MAP[101][101];
 bool check[101][101];
-bool check2[101][101];
 int dx[4] = { -1,1,0,0 };
 int dy[4] = { 0,0,-1,1 };
 int temp;
@@ -48,6 +46,7 @@ void bfs(int a, int b) {
 			}
 		}
 	}
+
 	int avg = (int)sum / cnt;
 	for (int i = 0; i < v.size(); i++) {
 		int x = v[i].first;

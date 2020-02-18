@@ -93,11 +93,9 @@ int main() {
 				for (int j = 1; j <= mx_r; j++) {
 					arrCount[MAP[j][i]]++;
 				}
-
 				for (int j = 1; j <= 100; j++) {
 					if (arrCount[j] != 0) v.push_back({ j, arrCount[j] });
 				}
-
 				sort(v.begin(), v.end(), cmp_v);
 				for (int j = 1; j <= mx_r; j++) {
 					MAP[j][i] = 0;

@@ -87,6 +87,7 @@ int main() {
 				}
 			}
 		}
+
 		bfs(s_x, s_y, 0);
 		for (int i = 1; i <= cnt; i++) {
 			int x = trash.front().first;
