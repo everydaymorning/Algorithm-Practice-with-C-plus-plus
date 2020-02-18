@@ -14,10 +14,10 @@ bool canRoad(int x, int y) {
 
 bool canRoad2(int x, int y) {
 	int tmp = MAP2[x][y + 1];
-	for (int k = y + 1; k < y + 1 + l; k++) {
-		if (MAP2[x][k] != tmp) return false;
+	for (int k = y + 1; k < y + 1 + l; k++) { // 다음 위치부터 길이 L만큼 동안
+		if (MAP2[x][k] != tmp) return false; // 길의 높이가 다르면 다음 위치에서 경사로 설치 못하므로 false 리턴
 	}
-	return true;
+	return true; // 높이가 모두 같으면 true 리턴
 }
 int main() {
 	cin.tie(0);
