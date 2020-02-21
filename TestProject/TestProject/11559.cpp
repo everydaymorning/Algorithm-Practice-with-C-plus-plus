@@ -39,7 +39,6 @@ void bfs(int a, int b) {
 					cout << "j: " << j << " y: " << y << " MAP[j][y]: " << MAP[j][y] << '\n';
 					MAP[x][y] = MAP[j][y];
 					MAP[j][y] = '.';
-					
 				}
 				else {
 					MAP[x][y] = '.';
