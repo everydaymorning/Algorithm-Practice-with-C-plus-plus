@@ -9,12 +9,14 @@ void bfs(int a, int b) {
 	vector<pair<int, int>> v;
 	q.push({ a,b });
 	int cnt = 0;
+
 	while (!q.empty()) {
 		int x = q.front().first;
 		int y = q.front().second;
 		char puyo = MAP[x][y];
 		cout << "puyo: " << puyo << '\n';
 		q.pop();
+
 		for (int dir = 0; dir < 4; dir++) {
 			int nx = x + dx[dir];
 			int ny = y + dy[dir];
@@ -28,6 +30,7 @@ void bfs(int a, int b) {
 		}
 	}
 	memset(check, false, sizeof(check));
+
 	cout << "cnt: " << cnt << '\n';
 	if (cnt >= 4) {
 		for (int i = 0; i < v.size(); i++) {
