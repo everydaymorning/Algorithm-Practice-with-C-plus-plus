@@ -37,8 +37,8 @@ void summer() {
 
 			while(t--) {
 				int age = dead[i][j].front();
-				age /= 2;
 				dead[i][j].pop();
+				age /= 2;
 				MAP[i][j] += age;
 			}
 		}

@@ -7,7 +7,7 @@ int cnt;
 bool canRoad(int x, int y) {
 	int tmp = MAP[x][y + 1];
 	for (int k = y + 1; k < y + 1 + l; k++) {
-		if (MAP[x][k] != tmp) return false;
+		if (MAP[x][k] != tmp) return false; 
 	}
 	return true;
 }
@@ -99,5 +99,4 @@ int main() {
 	}
 	cout << cnt;
 	return 0;
-
 }
