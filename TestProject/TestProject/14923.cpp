@@ -36,7 +36,7 @@ void bfs() {
 			else if (MAP[nx][ny] == 0 && check[nx][ny][block] == 0) {
 				cout << "ºó °÷: " << "  nx: " << nx << "  ny: " << ny << "  block: " << block << '\n';
 
-				q.push({ {nx,ny}, block });
+				q.push({ {nx,ny}, block });	
 				check[nx][ny][block] = check[x][y][block] + 1;
 			}
 		}
