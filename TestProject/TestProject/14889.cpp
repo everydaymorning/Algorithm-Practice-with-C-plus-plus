@@ -23,26 +23,28 @@ void dfs(int idx) {
 			}
 
 			mn = min(mn, abs(startSum - linkSum));
-			cout << "계산값: " << abs(startSum - linkSum) << '\n';
-			cout << "size 같아서 들어온 if문, 현재 최솟값 :  " << mn << '\n';
+			//cout << "계산값: " << abs(startSum - linkSum) << '\n';
+			//cout << "size 같아서 들어온 if문, 현재 최솟값 :  " << mn << '\n';
 		}
-		cout << "dfs 종료:  " << idx << '\n';
+		//cout << "dfs 종료:  " << idx << '\n';
 		return;
 	}
 
 	start.push_back(idx);
-	cout << "start idx: " << idx << '\n';
+	//cout << "start idx: " << idx << '\n';
 	
 	dfs(idx + 1);
 	start.pop_back();
 
 	link.push_back(idx);
-	cout << "link idx: " << idx << '\n';
+	//cout << "link idx: " << idx << '\n';
 	
 	dfs(idx + 1);
 	link.pop_back();
 }
 int main() {
+	cin.tie(0);
+	ios::sync_with_stdio(0);
 	cin >> n;
 
 	for (int i = 0; i < n; i++) {
