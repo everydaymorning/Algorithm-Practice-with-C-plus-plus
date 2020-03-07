@@ -12,7 +12,7 @@ int main() {
 	int cur = 0;
 	for (int i = 1; i <= n+1; i++) {
 		cur = max(cur, dp[i]);
-		cout << "cur: " << cur << "  dp: " << dp[i] << "  i: " << i << '\n';
+		//cout << "cur: " << cur << "  dp: " << dp[i] << "  i: " << i << '\n';
 		if (i + arr[i][0] > n + 1) continue;
 
 		dp[i + arr[i][0]] = max(cur + arr[i][1], dp[i + arr[i][0]]);
