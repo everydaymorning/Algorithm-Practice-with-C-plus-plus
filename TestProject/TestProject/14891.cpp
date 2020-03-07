@@ -1,531 +1,237 @@
 #include <bits/stdc++.h>
 using namespace std;
-string s1, s2, s3, s4;
-
 int k;
-int sum;
+int MAP[5][9];
+
+int reverse_d(int d) {
+	if (d == 1) return -1;
+	else return 1;
+}
+
+void solution(int num, int d) {
+	if (d == 1) {
+		int tmp = MAP[num][7];
+		for (int i = 7; i > 0; i--) {
+			MAP[num][i] = MAP[num][i - 1];
+		}
+		MAP[num][0] = tmp;
+	}
+	else {
+		int tmp = MAP[num][0];
+		for (int i = 0; i < 7; i++) {
+			MAP[num][i] = MAP[num][i + 1];
+		}
+		MAP[num][7] = tmp;
+	}
+}
+
+int count_point() {
+	int cnt = 0;
+	if (MAP[1][0] == 1) cnt += 1;
+	if (MAP[2][0] == 1) cnt += 2;
+	if (MAP[3][0] == 1) cnt += 4;
+	if (MAP[4][0] == 1) cnt += 8;
+	return cnt;
+}
 int main() {
 	cin.tie(0);
 	ios::sync_with_stdio(0);
-	cin >> s1;
-	cin >> s2;
-	cin >> s3;
-	cin >> s4;
+	for (int i = 1; i <= 4; i++) {
+		string str;
+		cin >> str;
+		for (int j = 0; j < 8; j++) {
+			MAP[i][j] = str[j] - '0';
+		}
+	}
 
 	cin >> k;
 	for (int i = 0; i < k; i++) {
-		int a, b;
-		cin >> a >> b;
-		if (a == 1) {
-			if (b == 1) {
-				if (s1.at(2) != s2.at(6)) {
-					if (s2.at(2) != s3.at(6)) {
-						if (s3.at(2) != s4.at(6)) {
-							char tmp = s1.at(7);
-							for (int j = 7; j > 0; j--) {
-								s1.at(j) = s1.at(j - 1);
-							}
-							s1.at(0) = tmp;
-							
-							tmp = s2.at(0);
-							for (int j = 0; j < 7; j++) {
-								s2.at(j) = s2.at(j + 1);
-							}
-							s2.at(7) = tmp;
-
-							tmp = s3.at(7);
-							for (int j = 7; j > 0; j--) {
-								s3.at(j) = s3.at(j - 1);
-							}
-							s3.at(0) = tmp;
-							
-							tmp = s4.at(0);
-							for (int j = 0; j < 7; j++) {
-								s4.at(j) = s4.at(j + 1);
-							}
-							s4.at(7) = tmp;
+		int num, d;
+		cin >> num >> d;
+		int nd = reverse_d(d);
+		if (num == 1) {
+			if (d == 1) {
+				if (MAP[num][2] != MAP[num + 1][6]) {
+					if (MAP[num + 1][2] != MAP[num + 2][6]) {
+						if (MAP[num + 2][2] != MAP[num + 3][6]) {
+							solution(num, d);
+							solution(num + 1, nd);
+							solution(num + 2, d);
+							solution(num + 3, nd);
 						}
 						else {
-							char tmp = s1.at(7);
-							for (int j = 7; j > 0; j--) {
-								s1.at(j) = s1.at(j - 1);
-							}
-							s1.at(0) = tmp;
-
-							tmp = s2.at(0);
-							for (int j = 0; j < 7; j++) {
-								s2.at(j) = s2.at(j + 1);
-							}
-							s2.at(7) = tmp;
-
-							tmp = s3.at(7);
-							for (int j = 7; j > 0; j--) {
-								s3.at(j) = s3.at(j - 1);
-							}
-							s3.at(0) = tmp;
+							solution(num, d);
+							solution(num + 1, nd);
+							solution(num + 2, d);
 						}
 					}
 					else {
-						char tmp = s1.at(7);
-						for (int j = 7; j > 0; j--) {
-							s1.at(j) = s1.at(j - 1);
-						}
-						s1.at(0) = tmp;
-
-						tmp = s2.at(0);
-						for (int j = 0; j < 7; j++) {
-							s2.at(j) = s2.at(j + 1);
-						}
-						s2.at(7) = tmp;
+						solution(num, d);
+						solution(num + 1, nd);
 					}
 				}
 				else {
-					char tmp = s1.at(7);
-					for (int j = 7; j > 0; j--) {
-						s1.at(j) = s1.at(j - 1);
-					}
-					s1.at(0) = tmp;
+					solution(num, d);
 				}
 			}
 			else {
-				if (s1.at(2) != s2.at(6)) {
-					if (s2.at(2) != s3.at(6)) {
-						if (s3.at(2) != s4.at(6)) {
-							char tmp = s1.at(0);
-							for (int j = 0; j < 7; j++) {
-								s1.at(j) = s1.at(j + 1);
-							}
-							s1.at(7) = tmp;
-
-							tmp = s2.at(7);
-							for (int j = 7; j > 0; j--) {
-								s2.at(j) = s2.at(j - 1);
-							}
-							s2.at(0) = tmp;
-
-							tmp = s3.at(0);
-							for (int j = 0; j < 7; j++) {
-								s3.at(j) = s3.at(j + 1);
-							}
-							s3.at(7) = tmp;
-
-							tmp = s4.at(7);
-							for (int j = 7; j > 0; j--) {
-								s4.at(j) = s4.at(j - 1);
-							}
-							s4.at(0) = tmp;
+				if (MAP[num][2] != MAP[num + 1][6]) {
+					if (MAP[num + 1][2] != MAP[num + 2][6]) {
+						if (MAP[num + 2][2] != MAP[num + 3][6]) {
+							solution(num, d);
+							solution(num + 1, nd);
+							solution(num + 2, d);
+							solution(num + 3, nd);
 						}
 						else {
-							char tmp = s1.at(0);
-							for (int j = 0; j < 7; j++) {
-								s1.at(j) = s1.at(j + 1);
-							}
-							s1.at(7) = tmp;
-
-							tmp = s2.at(7);
-							for (int j = 7; j > 0; j--) {
-								s2.at(j) = s2.at(j - 1);
-							}
-							s2.at(0) = tmp;
-
-							tmp = s3.at(0);
-							for (int j = 0; j < 7; j++) {
-								s3.at(j) = s3.at(j + 1);
-							}
-							s3.at(7) = tmp;
+							solution(num, d);
+							solution(num + 1, nd);
+							solution(num + 2, d);
 						}
 					}
 					else {
-						char tmp = s1.at(0);
-						for (int j = 0; j < 7; j++) {
-							s1.at(j) = s1.at(j + 1);
-						}
-						s1.at(7) = tmp;
-
-						tmp = s2.at(7);
-						for (int j = 7; j > 0; j--) {
-							s2.at(j) = s2.at(j - 1);
-						}
-						s2.at(0) = tmp;
+						solution(num, d);
+						solution(num + 1, nd);
 					}
 				}
 				else {
-					char tmp = s1.at(0);
-					for (int j = 0; j < 7; j++) {
-						s1.at(j) = s1.at(j + 1);
-					}
-					s1.at(7) = tmp;
+					solution(num, d);
 				}
+
 			}
+
 		}
-		else if (a == 2) {
-			if (b == 1) {
-				if (s1.at(2) != s2.at(6)) {
-					char tmp = s1.at(0);
-					for (int j = 0; j < 7; j++) {
-						s1.at(j) = s1.at(j + 1);
-					}
-					s1.at(7) = tmp;
+		else if (num == 2) {
+			if (d == 1) {
+				if (MAP[num - 1][2] != MAP[num][6]) {
+					solution(num - 1, nd);
 				}
-				if (s2.at(2) != s3.at(6)) {
-					if (s3.at(2) != s4.at(6)) {
-						char tmp = s2.at(7);
-						for (int j = 7; j > 0; j--) {
-							s2.at(j) = s2.at(j - 1);
-						}
-						s2.at(0) = tmp;
-
-						tmp = s3.at(0);
-						for (int j = 0; j < 7; j++) {
-							s3.at(j) = s3.at(j + 1);
-						}
-						s3.at(7) = tmp;
-
-						tmp = s4.at(7);
-						for (int j = 7; j > 0; j--) {
-							s4.at(j) = s4.at(j - 1);
-						}
-						s4.at(0) = tmp;
+				if (MAP[num][2] != MAP[num + 1][6]) {
+					if (MAP[num + 1][2] != MAP[num + 2][6]) {
+						solution(num, d);
+						solution(num + 1, nd);
+						solution(num + 2, d);
 					}
 					else {
-						char tmp = s2.at(7);
-						for (int j = 7; j > 0; j--) {
-							s2.at(j) = s2.at(j - 1);
-						}
-						s2.at(0) = tmp;
-
-						tmp = s3.at(0);
-						for (int j = 0; j < 7; j++) {
-							s3.at(j) = s3.at(j + 1);
-						}
-						s3.at(7) = tmp;
+						solution(num, d);
+						solution(num + 1, nd);
 					}
 				}
 				else {
-					char tmp = s2.at(7);
-					for (int j = 7; j > 0; j--) {
-						s2.at(j) = s2.at(j - 1);
-					}
-					s2.at(0) = tmp;
+					solution(num, d);
 				}
 			}
 			else {
-				if (s1.at(2) != s2.at(6)) {
-					char tmp = s1.at(7);
-					for (int j = 7; j > 0; j--) {
-						s1.at(j) = s1.at(j - 1);
-					}
-					s1.at(0) = tmp;
+				if (MAP[num - 1][2] != MAP[num][6]) {
+					solution(num - 1, nd);
 				}
-				if (s2.at(2) != s3.at(6)) {
-					if (s3.at(2) != s4.at(6)) {
-						char tmp = s2.at(0);
-						for (int j = 0; j < 7; j++) {
-							s2.at(j) = s2.at(j + 1);
-						}
-						s2.at(7) = tmp;
-
-						tmp = s3.at(7);
-						for (int j = 7; j > 0; j--) {
-							s3.at(j) = s3.at(j - 1);
-						}
-						s3.at(0) = tmp;
-
-						tmp = s4.at(0);
-						for (int j = 0; j < 7; j++) {
-							s4.at(j) = s4.at(j + 1);
-						}
-						s4.at(7) = tmp;
+				if (MAP[num][2] != MAP[num + 1][6]) {
+					if (MAP[num + 1][2] != MAP[num + 2][6]) {
+						solution(num, d);
+						solution(num + 1, nd);
+						solution(num + 2, d);
 					}
 					else {
-						char tmp = s2.at(0);
-						for (int j = 0; j < 7; j++) {
-							s2.at(j) = s2.at(j + 1);
-						}
-						s2.at(7) = tmp;
-
-						tmp = s3.at(7);
-						for (int j = 7; j > 0; j--) {
-							s3.at(j) = s3.at(j - 1);
-						}
-						s3.at(0) = tmp;
+						solution(num, d);
+						solution(num + 1, nd);
 					}
 				}
 				else {
-					char tmp = s2.at(0);
-					for (int j = 0; j < 7; j++) {
-						s2.at(j) = s2.at(j + 1);
-					}
-					s2.at(7) = tmp;
+					solution(num, d);
 				}
 			}
 		}
-		else if (a == 3) {
-			if (b == 1) {
-				if (s3.at(2) != s4.at(6)) {
-					char tmp = s4.at(0);
-					for (int j = 0; j < 7; j++) {
-						s4.at(j) = s4.at(j + 1);
-					}
-					s4.at(7) = tmp;
-				}
-				if (s2.at(2) != s3.at(6)) {
-					if (s1.at(2) != s2.at(6)) {
-						char tmp = s1.at(7);
-						for (int j = 7; j > 0; j--) {
-							s1.at(j) = s1.at(j - 1);
-						}
-						s1.at(0) = tmp;
-
-						tmp = s2.at(0);
-						for (int j = 0; j < 7; j++) {
-							s2.at(j) = s2.at(j + 1);
-						}
-						s2.at(7) = tmp;
-
-						tmp = s3.at(7);
-						for (int j = 7; j > 0; j--) {
-							s3.at(j) = s3.at(j - 1);
-						}
-						s3.at(0) = tmp;
+		else if (num == 3) {
+			if (d == 1) {
+				if (MAP[num - 1][2] != MAP[num][6]) {
+					if (MAP[num - 2][2] != MAP[num - 1][6]) {
+						solution(num - 1, nd);
+						solution(num - 2, d);
 					}
 					else {
-						char tmp = s2.at(0);
-						for (int j = 0; j < 7; j++) {
-							s2.at(j) = s2.at(j + 1);
-						}
-						s2.at(7) = tmp;
-
-						tmp = s3.at(7);
-						for (int j = 7; j > 0; j--) {
-							s3.at(j) = s3.at(j - 1);
-						}
-						s3.at(0) = tmp;
+						solution(num - 1, nd);
 					}
 				}
+				if (MAP[num][2] != MAP[num + 1][6]) {
+					solution(num, d);
+					solution(num + 1, nd);
+				}
 				else {
-					char tmp = s3.at(7);
-					for (int j = 7; j > 0; j--) {
-						s3.at(j) = s3.at(j - 1);
-					}
-					s3.at(0) = tmp;
+					solution(num, d);
 				}
 			}
 			else {
-				if (s3.at(2) != s4.at(6)) {
-					char tmp = s4.at(7);
-					for (int j = 7; j > 0; j--) {
-						s4.at(j) = s4.at(j - 1);
-					}
-					s4.at(0) = tmp;
-				}
-				if (s2.at(2) != s3.at(6)) {
-					if (s1.at(2) != s2.at(6)) {
-						char tmp = s1.at(0);
-						for (int j = 0; j < 7; j++) {
-							s1.at(j) = s1.at(j + 1);
-						}
-						s1.at(7) = tmp;
-
-						tmp = s2.at(7);
-						for (int j = 7; j > 0; j--) {
-							s2.at(j) = s2.at(j - 1);
-						}
-						s2.at(0) = tmp;
-
-						tmp = s3.at(0);
-						for (int j = 0; j < 7; j++) {
-							s3.at(j) = s3.at(j + 1);
-						}
-						s3.at(7) = tmp;
+				if (MAP[num - 1][2] != MAP[num][6]) {
+					if (MAP[num - 2][2] != MAP[num - 1][6]) {
+						solution(num - 1, nd);
+						solution(num - 2, d);
 					}
 					else {
-						char tmp = s2.at(7);
-						for (int j = 7; j > 0; j--) {
-							s2.at(j) = s2.at(j - 1);
-						}
-						s2.at(0) = tmp;
-
-						tmp = s3.at(0);
-						for (int j = 0; j < 7; j++) {
-							s3.at(j) = s3.at(j + 1);
-						}
-						s3.at(7) = tmp;
+						solution(num - 1, nd);
 					}
 				}
+				if (MAP[num][2] != MAP[num + 1][6]) {
+					solution(num, d);
+					solution(num + 1, nd);
+				}
 				else {
-					char tmp = s3.at(0);
-					for (int j = 0; j < 7; j++) {
-						s3.at(j) = s3.at(j + 1);
-					}
-					s3.at(7) = tmp;
+					solution(num, d);
 				}
 			}
 		}
-		else if (a == 4) {
-			if (b == 1) {
-				if (s3.at(2) != s4.at(6)) {
-					if (s2.at(2) != s3.at(6)) {
-						if (s1.at(2) != s2.at(6)) {
-							char tmp = s1.at(0);
-							for (int j = 0; j < 7; j++) {
-								s1.at(j) = s1.at(j + 1);
-							}
-							s1.at(7) = tmp;
-
-							tmp = s2.at(7);
-							for (int j = 7; j > 0; j--) {
-								s2.at(j) = s2.at(j - 1);
-							}
-							s2.at(0) = tmp;
-
-							tmp = s3.at(0);
-							for (int j = 0; j < 7; j++) {
-								s3.at(j) = s3.at(j + 1);
-							}
-							s3.at(7) = tmp;
-
-							tmp = s4.at(7);
-							for (int j = 7; j > 0; j--) {
-								s4.at(j) = s4.at(j - 1);
-							}
-							s4.at(0) = tmp;
+		else if (num == 4) {
+			if (d == 1) {
+				if (MAP[num - 1][2] != MAP[num][6]) {
+					if (MAP[num - 2][2] != MAP[num - 1][6]) {
+						if (MAP[num - 3][2] != MAP[num - 2][6]) {
+							solution(num, d);
+							solution(num - 1, nd);
+							solution(num - 2, d);
+							solution(num - 3, nd);
 						}
 						else {
-							char tmp = s2.at(7);
-							for (int j = 7; j > 0; j--) {
-								s2.at(j) = s2.at(j - 1);
-							}
-							s2.at(0) = tmp;
-
-							tmp = s3.at(0);
-							for (int j = 0; j < 7; j++) {
-								s3.at(j) = s3.at(j + 1);
-							}
-							s3.at(7) = tmp;
-
-							tmp = s4.at(7);
-							for (int j = 7; j > 0; j--) {
-								s4.at(j) = s4.at(j - 1);
-							}
-							s4.at(0) = tmp;
+							solution(num, d);
+							solution(num - 1, nd);
+							solution(num - 2, d);
 						}
 					}
 					else {
-						char tmp = s3.at(0);
-						for (int j = 0; j < 7; j++) {
-							s3.at(j) = s3.at(j + 1);
-						}
-						s3.at(7) = tmp;
-
-						tmp = s4.at(7);
-						for (int j = 7; j > 0; j--) {
-							s4.at(j) = s4.at(j - 1);
-						}
-						s4.at(0) = tmp;
+						solution(num, d);
+						solution(num - 1, nd);
 					}
 				}
 				else {
-					char tmp = s4.at(7);
-					for (int j = 7; j > 0; j--) {
-						s4.at(j) = s4.at(j - 1);
-					}
-					s4.at(0) = tmp;
+					solution(num, d);
 				}
 			}
 			else {
-				if (s3.at(2) != s4.at(6)) {
-					if (s2.at(2) != s3.at(6)) {
-						if (s1.at(2) != s2.at(6)) {
-							char tmp = s1.at(7);
-							for (int j = 7; j > 0; j--) {
-								s1.at(j) = s1.at(j - 1);
-							}
-							s1.at(0) = tmp;
-
-							tmp = s2.at(0);
-							for (int j = 0; j < 7; j++) {
-								s2.at(j) = s2.at(j + 1);
-							}
-							s2.at(7) = tmp;
-
-							tmp = s3.at(7);
-							for (int j = 7; j > 0; j--) {
-								s3.at(j) = s3.at(j - 1);
-							}
-							s3.at(0) = tmp;
-
-							tmp = s4.at(0);
-							for (int j = 0; j < 7; j++) {
-								s4.at(j) = s4.at(j + 1);
-							}
-							s4.at(7) = tmp;
+				if (MAP[num - 1][2] != MAP[num][6]) {
+					if (MAP[num - 2][2] != MAP[num - 1][6]) {
+						if (MAP[num - 3][2] != MAP[num - 2][6]) {
+							solution(num, d);
+							solution(num - 1, nd);
+							solution(num - 2, d);
+							solution(num - 3, nd);
 						}
 						else {
-							char tmp = s2.at(0);
-							for (int j = 0; j < 7; j++) {
-								s2.at(j) = s2.at(j + 1);
-							}
-							s2.at(7) = tmp;
-
-							tmp = s3.at(7);
-							for (int j = 7; j > 0; j--) {
-								s3.at(j) = s3.at(j - 1);
-							}
-							s3.at(0) = tmp;
-
-							tmp = s4.at(0);
-							for (int j = 0; j < 7; j++) {
-								s4.at(j) = s4.at(j + 1);
-							}
-							s4.at(7) = tmp;
+							solution(num, d);
+							solution(num - 1, nd);
+							solution(num - 2, d);
 						}
 					}
 					else {
-						char tmp = s3.at(7);
-						for (int j = 7; j > 0; j--) {
-							s3.at(j) = s3.at(j - 1);
-						}
-						s3.at(0) = tmp;
-
-						tmp = s4.at(0);
-						for (int j = 0; j < 7; j++) {
-							s4.at(j) = s4.at(j + 1);
-						}
-						s4.at(7) = tmp;
+						solution(num, d);
+						solution(num - 1, nd);
 					}
 				}
 				else {
-					char tmp = s4.at(0);
-					for (int j = 0; j < 7; j++) {
-						s4.at(j) = s4.at(j + 1);
-					}
-					s4.at(7) = tmp;
+					solution(num, d);
 				}
 			}
 		}
-
-		//cout << s1 << '\n';
-
-		//cout << s2 << '\n';
-
-		//cout << s3 << '\n';
-
-		//cout << s4 << '\n';
 	}
 
-	if (s1.at(0) == '1') {
-		sum += 1;
-	}
-	if (s2.at(0) == '1') {
-		sum += 2;
-	}
-	if (s3.at(0) == '1') {
-		sum += 4;
-	}
-	if (s4.at(0) == '1') {
-		sum += 8;
-	}
-	cout << sum;
+	int res = count_point();
+	cout << res;
 	return 0;
 }
