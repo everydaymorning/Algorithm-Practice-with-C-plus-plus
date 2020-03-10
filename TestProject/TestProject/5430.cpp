@@ -47,15 +47,12 @@ int main() {
 		for (int k = 0; k < tmp_len; k++) {
 			if (tmp[k] == 'R') {
 				r = !r;
-				
 			}
 			else {
 				if (dq.empty()) {
-
 					flag = !flag;
 					cout << "error" << '\n';
 					break;
-
 				}
 				if (r == true) {
 					dq.pop_back();
