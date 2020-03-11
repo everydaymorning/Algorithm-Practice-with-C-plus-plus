@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 int arr[1000001];
+
 void prime(int a, int b) {
 	for (int i = 2; i <= b; i++) {
 		arr[i] = i;
