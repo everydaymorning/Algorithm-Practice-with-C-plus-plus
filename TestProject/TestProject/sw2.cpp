@@ -10,7 +10,7 @@ int main() {
 	cin >> n >> k;
 	for (int i = 0; i < n; i++) {
 		cin >> arr[i];
-	}
+	} 
 
 	int end = n - (k - 1);
 	int MAX = 0;

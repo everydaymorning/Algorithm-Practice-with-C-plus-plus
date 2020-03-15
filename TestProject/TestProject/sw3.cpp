@@ -6,13 +6,17 @@
 using namespace std;
 vector<int> v, tmp;
 int arr[11] = { 6,2,5,5,4,5,6,3,7,6 };
-int MAX;
+long long MAX;
 int n;
 void dfs(int cnt, string sum) {
-	cout << "cnt: " << cnt << " sum : " << sum << '\n';
+	//cout << "cnt: " << cnt << " sum : " << sum << '\n';
 	if (cnt > n) return;
 	if (cnt == n) {
-		int tmp = stoi(sum);
+		string s;
+		for (int i = 0; i < sum.size(); i++) {
+			if (sum[i] != '0') s += sum[i];
+		}
+		long long tmp = stoll(s);
 		MAX = max(MAX, tmp);
 		return;
 	}

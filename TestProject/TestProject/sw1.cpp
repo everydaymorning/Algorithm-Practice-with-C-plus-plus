@@ -19,8 +19,8 @@ int main() {
 			}
 		}
 
-		for (int i = 0; i < n-1; i++) {
-			for (int j = 0; j < m-1; j++) {
+		for (int i = 0; i < n - 1; i++) {
+			for (int j = 0; j < m - 1; j++) {
 				for (int k = i; k < i + 2; k++) {
 					bool flag = false;
 					for (int l = j; l < j + 2; l++) {
