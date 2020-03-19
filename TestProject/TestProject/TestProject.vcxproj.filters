@@ -1308,5 +1308,11 @@
     <ClCompile Include="3613.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="1987_2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="2580_2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
