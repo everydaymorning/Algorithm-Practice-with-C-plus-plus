@@ -18,7 +18,10 @@ void bfs() {
 		int d = q.front().second.first;
 		int nk = q.front().second.second;
 		q.pop();
-
+		if (x == h - 1 && y == w - 1) {
+			cout << d;
+			return;
+		}
 		
 
 		if(nk < k){
@@ -30,10 +33,7 @@ void bfs() {
 
 				if (nx < 0 || ny < 0 || nx >= h || ny >= w) continue;
 				if (check[nx][ny][nk + 1] || MAP[nx][ny] == 1) continue;
-				if (nx == h - 1 && ny == w - 1) {
-					cout << d + 1;
-					return;
-				}
+				
 				q.push({ {nx,ny},{d + 1,nk + 1} });
 				check[nx][ny][nk + 1] = true;
 			}
@@ -45,10 +45,10 @@ void bfs() {
 			int ny = y + dy[dir];
 			if (nx < 0 || ny < 0 || nx >= h || ny >= w) continue;
 			if (check[nx][ny][nk] || MAP[nx][ny] == 1) continue;
-			if (nx == h - 1 && ny == w - 1) {
+			/*if (nx == h - 1 && ny == w - 1) {
 				cout << d + 1;
 				return;
-			}
+			}*/
 			q.push({ {nx,ny},{d + 1,nk} });
 			check[nx][ny][nk] = true;
 		}

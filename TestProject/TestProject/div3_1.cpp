@@ -1,45 +1,34 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-int n;
-bool check[200001];
-vector<int> v1, v2;
-int res;
-void dfs(int idx, int cnt, int sum1, int sum2) {
-	if (cnt == 2) {
-		if (sum1 > sum2) {
-			res++;
-		}
-		return;
-	}
-	for (int i = idx; i < v1.size(); i++) {
-		if (check[i]) continue;
-		check[i] = true;
-		sum1 += v1[i];
-		sum2 += v2[i];
-		dfs(i, cnt + 1, sum1, sum2);
-		sum1 -= v1[i];
-		sum2 -= v2[i];
-		check[i] = false;
-	}
-}
+int arr[101];
+int t, n;
+
 int main() {
 	cin.tie(0);
 	ios::sync_with_stdio(0);
-	cin >> n;
-	for (int i = 0; i < n; i++) {
-		int a;
-		cin >> a;
-		v1.push_back(a);
-	}
+	cin >> t;
+	while (t--) {
+		cin >> n;
+		int MIN = 101;
+		for (int i = 0; i < n; i++) {
+			cin >> arr[i];
+			if (arr[i] < MIN) {
+				MIN = arr[i];
+			}
+		}
+		bool flag = false;
+		for (int i = 0; i < n; i++) {
+			arr[i] -= MIN;
+			if (arr[i] % 2 == 1) flag = true;
+		}
+		if (flag) {
+			cout << "NO" << '\n';
+		}
+		else {
+			cout << "YES" << '\n';
+		}
 
-	for (int i = 0; i < n; i++) {
-		int a;
-		cin >> a;
-		v2.push_back(a);
 	}
-
-	dfs(0, 0, 0, 0);
-	cout << res;
 	return 0;
 }
