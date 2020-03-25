@@ -16,6 +16,7 @@ void dfs(int cnt) {
 		res.push_back(s);
 	}
 
+
 	for (int i = 0; i < pattern.size(); i++) {
 		if (check[i]) continue;
 		check[i] = true;
@@ -26,13 +27,9 @@ void dfs(int cnt) {
 	}
 }
 int main() {
-	
 	cin >> str;
 	cin >> pattern;
-
-
 	dfs(0);
-	
 	for (int i = 0; i < str.size() - pattern.size() + 1; i++) {
 		bool flag = false;
 		for (int j = 0; j < pattern.size(); j++) {
@@ -41,7 +38,6 @@ int main() {
 				break;
 			}
 		}
-
 		if (flag) {
 			string s = str.substr(i, pattern.size());
 			for (int j = 0; j < res.size(); j++) {
