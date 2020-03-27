@@ -16,6 +16,9 @@
     <Filter Include="소스 파일\programmers">
       <UniqueIdentifier>{f344b0c0-caf7-462d-a60a-428a23260a37}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\codeforce">
+      <UniqueIdentifier>{1e63ccd3-cd40-405a-a36c-d4bc6fafde89}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test.cpp">
@@ -1391,6 +1394,12 @@
     </ClCompile>
     <ClCompile Include="hash2.cpp">
       <Filter>소스 파일\programmers</Filter>
+    </ClCompile>
+    <ClCompile Include="629div3_1.cpp">
+      <Filter>소스 파일\codeforce</Filter>
+    </ClCompile>
+    <ClCompile Include="629div3_2.cpp">
+      <Filter>소스 파일\codeforce</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
