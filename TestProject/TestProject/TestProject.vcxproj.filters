@@ -19,6 +19,9 @@
     <Filter Include="소스 파일\codeforce">
       <UniqueIdentifier>{1e63ccd3-cd40-405a-a36c-d4bc6fafde89}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\estsoft">
+      <UniqueIdentifier>{fde43e29-155b-4724-9771-12412605fea0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test.cpp">
@@ -1402,6 +1405,21 @@
       <Filter>소스 파일\codeforce</Filter>
     </ClCompile>
     <ClCompile Include="stack_queue1.cpp">
+      <Filter>소스 파일\programmers</Filter>
+    </ClCompile>
+    <ClCompile Include="est1.cpp">
+      <Filter>소스 파일\estsoft</Filter>
+    </ClCompile>
+    <ClCompile Include="est2.cpp">
+      <Filter>소스 파일\estsoft</Filter>
+    </ClCompile>
+    <ClCompile Include="est3.cpp">
+      <Filter>소스 파일\estsoft</Filter>
+    </ClCompile>
+    <ClCompile Include="est4.cpp">
+      <Filter>소스 파일\estsoft</Filter>
+    </ClCompile>
+    <ClCompile Include="greedy1.cpp">
       <Filter>소스 파일\programmers</Filter>
     </ClCompile>
   </ItemGroup>
