@@ -1428,5 +1428,20 @@
     <ClCompile Include="brute2.cpp">
       <Filter>소스 파일\programmers</Filter>
     </ClCompile>
+    <ClCompile Include="stack_queue2.cpp">
+      <Filter>소스 파일\programmers</Filter>
+    </ClCompile>
+    <ClCompile Include="bin1.cpp">
+      <Filter>소스 파일\programmers</Filter>
+    </ClCompile>
+    <ClCompile Include="bin2.cpp">
+      <Filter>소스 파일\programmers</Filter>
+    </ClCompile>
+    <ClCompile Include="3079.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="heap1.cpp">
+      <Filter>소스 파일\programmers</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
