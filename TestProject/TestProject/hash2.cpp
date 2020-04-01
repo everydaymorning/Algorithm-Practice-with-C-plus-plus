@@ -15,10 +15,23 @@ int main() {
 	for (int i = 0; i < v.size(); i++) {
 		um.insert({ v[i],1 });
 	}
-	
-	for (int i = 0; i < um.size() - 1; i++) {
-		
+	bool flag = true;
+	for (int i = 0; i < v.size(); i++) {
+		string s;
+		for (int j = 0; j < v[i].size(); j++) {
+			s += v[i][j];
+			if (um[s] && s != v[i]) {
+				flag = false;
+				break;
+			}
+		}
+		if (!flag) {
+			break;
+		}
 	}
-
-
+	if (flag) {
+		cout << "true";
+	}
+	else cout << "false";
+	return 0;
 }

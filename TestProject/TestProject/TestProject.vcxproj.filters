@@ -1443,5 +1443,17 @@
     <ClCompile Include="heap1.cpp">
       <Filter>소스 파일\programmers</Filter>
     </ClCompile>
+    <ClCompile Include="t1.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="dp1.cpp">
+      <Filter>소스 파일\programmers</Filter>
+    </ClCompile>
+    <ClCompile Include="dp2.cpp">
+      <Filter>소스 파일\programmers</Filter>
+    </ClCompile>
+    <ClCompile Include="dp3.cpp">
+      <Filter>소스 파일\programmers</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
