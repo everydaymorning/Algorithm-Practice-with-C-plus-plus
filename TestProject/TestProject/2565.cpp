@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 vector<int> lis;
-int arr[501];
 vector<pair<int, int>> p;
 int cnt;
 int main() {
