@@ -1524,5 +1524,8 @@
     <ClCompile Include="line6.cpp">
       <Filter>소스 파일\lineplus</Filter>
     </ClCompile>
+    <ClCompile Include="SW2019_1.cpp">
+      <Filter>소스 파일\programmers</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
