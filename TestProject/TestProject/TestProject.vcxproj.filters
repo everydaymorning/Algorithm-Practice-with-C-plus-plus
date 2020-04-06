@@ -1527,5 +1527,11 @@
     <ClCompile Include="SW2019_1.cpp">
       <Filter>소스 파일\programmers</Filter>
     </ClCompile>
+    <ClCompile Include="SW2019_2.cpp">
+      <Filter>소스 파일\programmers</Filter>
+    </ClCompile>
+    <ClCompile Include="SW2019_3.cpp">
+      <Filter>소스 파일\programmers</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
