@@ -4,6 +4,7 @@ bool check[300001];
 int n;
 string road;
 int MAX = 0;
+//이분탐색으로 다시 풀어보기
 void dfs(int cnt, int idx) {
 	if (cnt == n) {
 		int num = 0;
