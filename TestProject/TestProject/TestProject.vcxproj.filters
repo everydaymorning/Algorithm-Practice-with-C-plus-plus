@@ -25,6 +25,9 @@
     <Filter Include="소스 파일\lineplus">
       <UniqueIdentifier>{dff2f7d8-8abf-4aef-aaeb-a8b8151eb2e1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\naver_hackday">
+      <UniqueIdentifier>{80e6202a-89fe-45c5-bf49-df606d861e84}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test.cpp">
@@ -1532,6 +1535,15 @@
     </ClCompile>
     <ClCompile Include="SW2019_3.cpp">
       <Filter>소스 파일\programmers</Filter>
+    </ClCompile>
+    <ClCompile Include="naver1.cpp">
+      <Filter>소스 파일\naver_hackday</Filter>
+    </ClCompile>
+    <ClCompile Include="naver2.cpp">
+      <Filter>소스 파일\naver_hackday</Filter>
+    </ClCompile>
+    <ClCompile Include="naver3.cpp">
+      <Filter>소스 파일\naver_hackday</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
