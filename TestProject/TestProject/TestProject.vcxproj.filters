@@ -1545,5 +1545,8 @@
     <ClCompile Include="naver3.cpp">
       <Filter>소스 파일\naver_hackday</Filter>
     </ClCompile>
+    <ClCompile Include="SW2019_4.cpp">
+      <Filter>소스 파일\programmers</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
