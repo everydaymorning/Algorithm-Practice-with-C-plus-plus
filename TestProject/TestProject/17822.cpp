@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-int n, m, t;
+int n, m, t, x, d, K;
 int MAP[51][51];
 int TEMP[51][51];
 int ans;
@@ -21,6 +21,8 @@ void setting1() {
 }
 
 void move(int x, int d, int K) {
+	cin >> x >> d >> K;
+
 	for (int i = 1; i <= n; i++) {
 		if (i % x == 0) {
 			if (d == 0) {
@@ -161,6 +163,8 @@ void answer_count() {
 	cout << ans;
 }
 void INPUT() {
+	cin >> n >> m >> t;
+
 	for (int i = 1; i <= n; i++) {
 		for (int j = 1; j <= m; j++) {
 			cin >> MAP[i][j];
@@ -170,11 +174,8 @@ void INPUT() {
 int main() {
 	cin.tie(0);
 	ios::sync_with_stdio(0);
-	cin >> n >> m >> t;
 	INPUT();
 	for (int i = 0; i < t; i++) {
-		int x, d, K;
-		cin >> x >> d >> K;
 		move(x, d, K);
 		setting();
 		if (!remove()) solve();
