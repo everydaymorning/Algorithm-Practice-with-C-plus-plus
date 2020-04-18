@@ -2,7 +2,6 @@
 using namespace std;
 int DICE[11];
 int MAL[4];
-
 int MAP[33];
 int TEMP[33];
 bool check[33];
@@ -14,7 +13,6 @@ void dfs(int cnt, int sum) {
 		ans = max(ans, sum);
 		return;
 	}
-
 	for (int i = 0; i < 4; i++) {
 		int here = MAL[i];
 		int next = here;
