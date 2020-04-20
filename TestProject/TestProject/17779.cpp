@@ -91,7 +91,6 @@ int main() {
 					v.push_back({ i + d2 + d1, j - d1 + d2 });
 
 					go();
-
 					
 					fill(SUM, SUM + 6, 0);
 					v.clear();
