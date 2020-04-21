@@ -11,7 +11,6 @@ void setting() {
 		}
 	}
 }
-
 void setting1() {
 	for (int i = 1; i <= n; i++) {
 		for (int j = 1; j <= m; j++) {
@@ -19,10 +18,8 @@ void setting1() {
 		}
 	}
 }
-
 void move(int x, int d, int K) {
 	cin >> x >> d >> K;
-
 	for (int i = 1; i <= n; i++) {
 		if (i % x == 0) {
 			if (d == 0) {
@@ -46,7 +43,6 @@ void move(int x, int d, int K) {
 		}
 	}
 }
-
 bool remove() {
 	bool flag = false;
 	for (int i = 1; i <= n; i++) {
@@ -122,7 +118,6 @@ bool remove() {
 			}
 		}
 	}
-
 	if (flag) return true;
 	else return false;
 }
@@ -164,7 +159,6 @@ void answer_count() {
 }
 void INPUT() {
 	cin >> n >> m >> t;
-
 	for (int i = 1; i <= n; i++) {
 		for (int j = 1; j <= m; j++) {
 			cin >> MAP[i][j];
@@ -182,6 +176,5 @@ int main() {
 		setting1();
 	}
 	answer_count();
-	
 	return 0;
 }

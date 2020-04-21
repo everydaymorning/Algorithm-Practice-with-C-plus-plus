@@ -9,7 +9,6 @@ int MIN = 2147483647;
 bool check(int x, int y, int d1, int d2) {
 	if (x + d1 >= n || y - d1 < 0) return false;
 	else if (x + d2 >= n || y + d2 >= n) return false;
-	else if (x + d1 + d2 >= n || y - d1 + d2 >= n) return false;
 	else if (x + d2 + d1 >= n || y + d2 - d1 < 0) return false;
 	return true;
 }
