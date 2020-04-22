@@ -1608,5 +1608,8 @@
     <ClCompile Include="2020_1.cpp">
       <Filter>소스 파일\kakao_practice</Filter>
     </ClCompile>
+    <ClCompile Include="2019_winter.cpp">
+      <Filter>소스 파일\kakao_practice</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

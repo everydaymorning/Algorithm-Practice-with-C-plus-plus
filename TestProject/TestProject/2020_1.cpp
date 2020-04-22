@@ -3,21 +3,20 @@ using namespace std;
 
 int main() {
 	int size = 1000;
-	string s = "abcabcdede";
-	string ans;
+	string s = "xababcdcdababcdcd";
 	string tmp;
 	string tmp2;
+	vector<string> v;
 	int s_size = s.size();
 	bool con = false;
 	for (int i = 1; i <= s_size / 2; i++) {
+		bool flag = true;
 		tmp = s.substr(0, i);
-		ans += tmp;
 		int cnt = 1;
 		int idx = 0;
 		for (int j = i; j < s.size(); j++) {
 			tmp2 = s.substr(j, i);
 			j += (i - 1);
-			cout << "tmp: " << tmp << "  tmp2: " << tmp2 << '\n';
 
 			if (tmp == tmp2) {
 				cnt++;
@@ -25,36 +24,34 @@ int main() {
 			else {
 				if (cnt > 1) {
 					string num = to_string(cnt);
-					ans = num + ans;
-					ans += tmp2;
-					cnt = 1;
-					con = true;
+					v.push_back(num + tmp);
 				}
 				else {
-					idx = j;
-					break;
+					v.push_back(tmp);
 				}
+				tmp = tmp2;
+				cnt = 1;
 			}
-			tmp2 = "";
 
 		}
-		if (!con) {
-			ans = s;
+		if (cnt > 1) {
+			string num = to_string(cnt);
+			v.push_back(num + tmp);
 		}
 		else {
-			cout << "idx: " << idx << '\n';
-			for (int j = idx; j < s.size(); j++) {
-				ans += s[j];
-			}
+			v.push_back(tmp);
 		}
-		cout << "ans: " << ans << '\n';
+		string str;
+		for (int j = 0; j < v.size(); j++) {
+			str += v[j];
+		}
 
-		int ans_size = ans.size();
-		size = min(size, ans_size);
-		cout << "size: " << size << '\n';
+		int str_size = str.size();
+		size = min(size, str_size);
 		tmp = "";
-		ans = "";
-
+		v.clear();
 	}
+	if (s_size == 1) cout << "1";
+	else cout << size;
 	return 0;
 }
