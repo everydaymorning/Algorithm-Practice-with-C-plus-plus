@@ -25,7 +25,6 @@ int main() {
 				id += record[i][j];
 				j++;
 			}
-
 			while (1) {
 				if (j == record[i].size()) {
 					break;
@@ -52,6 +51,7 @@ int main() {
 
 			v.push_back({ "Leave", id });
 		}
+
 		else if (record[i][0] == 'C') {
 			cout << "Change" << '\n';
 			int j = 7;
@@ -73,7 +73,6 @@ int main() {
 				j++;
 			}
 			cout << "id: " << id << "  name: " << name << '\n';
-
 			ID[id] = name;
 		}
 	}

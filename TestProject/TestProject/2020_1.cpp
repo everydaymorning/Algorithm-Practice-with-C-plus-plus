@@ -8,12 +8,9 @@ int main() {
 	string tmp2;
 	vector<string> v;
 	int s_size = s.size();
-	bool con = false;
 	for (int i = 1; i <= s_size / 2; i++) {
-		bool flag = true;
 		tmp = s.substr(0, i);
 		int cnt = 1;
-		int idx = 0;
 		for (int j = i; j < s.size(); j++) {
 			tmp2 = s.substr(j, i);
 			j += (i - 1);
@@ -29,7 +26,7 @@ int main() {
 				else {
 					v.push_back(tmp);
 				}
-				tmp = tmp2;
+				tmp = tmp2; // 기준 문자열 변경
 				cnt = 1;
 			}
 

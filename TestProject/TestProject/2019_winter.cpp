@@ -12,7 +12,6 @@ int main() {
 	board.push_back({ 4,2,4,4,2 });
 	board.push_back({ 3,5,1,3,1 });
 	int n = board.size();
-
 	cout << "n: " << n << '\n';
 	vector<int> moves;
 	moves.push_back(1);
