@@ -1617,5 +1617,14 @@
     <ClCompile Include="12100_2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="3190_2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="2020_2.cpp">
+      <Filter>소스 파일\kakao_practice</Filter>
+    </ClCompile>
+    <ClCompile Include="2019_2.cpp">
+      <Filter>소스 파일\kakao_practice</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
