@@ -31,6 +31,9 @@
     <Filter Include="소스 파일\kakao_practice">
       <UniqueIdentifier>{0e286873-c8e3-4e62-a3a8-2cdd62f7cb12}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\hyundai">
+      <UniqueIdentifier>{934fdb6a-8742-4a2f-9d7f-dafb7c313230}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test.cpp">
@@ -1625,6 +1628,15 @@
     </ClCompile>
     <ClCompile Include="2019_2.cpp">
       <Filter>소스 파일\kakao_practice</Filter>
+    </ClCompile>
+    <ClCompile Include="hyundai3.cpp">
+      <Filter>소스 파일\hyundai</Filter>
+    </ClCompile>
+    <ClCompile Include="hyundai4.cpp">
+      <Filter>소스 파일\hyundai</Filter>
+    </ClCompile>
+    <ClCompile Include="hyundai1.cpp">
+      <Filter>소스 파일\hyundai</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
