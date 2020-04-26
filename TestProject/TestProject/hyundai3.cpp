@@ -28,7 +28,6 @@ string check(int idx, vector<string> registered_list, string new_id) {
 			string a = check(idx + 1, registered_list, tmp);
 			return a;
 		}
-		
 	}
 	return new_id;
 }
@@ -41,7 +40,6 @@ string solution(vector<string> registered_list, string new_id) {
 }
 
 int main() {
-	
 	register_id = { "bird99", "bird98", "bird101", "gotoxy" };
 	id = "bird98";
 	string a = solution(register_id, id);

@@ -43,6 +43,7 @@ int main() {
 
 			int nx = x + dx[dir];
 			int ny = y + dy[dir];
+
 			if (nx > 0 && ny > 0 && nx <= n && ny <= n && MAP[nx][ny] != 2) {
 				if (MAP[nx][ny] == 0) { // �羃鶺� 唳辦
 					int loc = 0;
@@ -61,11 +62,11 @@ int main() {
 						cnt++;
 						if (TEMP[x][y][j] == i) break;
 					}
-
 					for (int j = 0; j < cnt; j++) {
 						TEMP[x][y].pop_back();
 					}
 				}
+
 				else if (MAP[nx][ny] == 1) { // 說除儀檣 唳辦
 					int loc = 0;
 					for (int j = 0; j < TEMP[x][y].size(); j++) {
@@ -98,7 +99,6 @@ int main() {
 				dir = knight[i].dir;
 				nx = x + dx[dir];
 				ny = y + dy[dir];
-
 
 				if (MAP[nx][ny] != 2 && (nx > 0 && ny > 0 && nx <= n && ny <= n)) {
 					if (MAP[nx][ny] == 0) {
@@ -146,8 +146,6 @@ int main() {
 						}
 					}
 				}
-				
-
 			}
 
 			for (int j = 1; j <= k; j++) {

@@ -14,10 +14,7 @@ vector<int> solution(vector<string> purchase) {
 			s += purchase[i][j];
 		}
 		v[i].push_back(s);
-
-
 	}
-
 	return answer;
 }
 int main() {

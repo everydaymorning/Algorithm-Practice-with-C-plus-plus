@@ -22,11 +22,9 @@ void dfs(int cnt, int sum) {
 			next = TEMP[next];
 			dist--;
 		}
-
 		for (int j = 0; j < dist; j++) {
 			next = MAP[next];
 		}
-
 		if (next != 21 && check[next]) continue;
 
 		check[here] = false;
