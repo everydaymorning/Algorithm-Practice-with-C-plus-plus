@@ -12,9 +12,10 @@ vector<int> solution(int N, vector<int> stages) {
 	for (int i = 0; i < stages.size(); i++) {
 		arr[stages[i]]++;
 	}
-	
+	double tmp = 0;
 	for (int i = 1; i <= N; i++) {
-		double tmp = (double)arr[i] / size;
+		if (size == 0) tmp = 0;
+		tmp = (double)arr[i] / size;
 		v.push_back({ i, tmp });
 		size -= arr[i];
 	}
