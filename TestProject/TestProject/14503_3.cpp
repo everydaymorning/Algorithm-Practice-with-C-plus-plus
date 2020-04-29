@@ -21,7 +21,6 @@ void move() {
 			cnt++;
 		}
 		bool flag = false;
-
 		for (int dir = 0; dir < 4; dir++) {
 			d = (d + 3) % 4;
 			int nx = x + dx[d];
@@ -36,7 +35,6 @@ void move() {
 			x = x + dx[(d + 2) % 4];
 			y = y + dy[(d + 2) % 4];
 			if (MAP[x][y] == 1) break;
-
 		}
 	}
 	cout << cnt;

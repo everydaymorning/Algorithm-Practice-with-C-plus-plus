@@ -14,13 +14,9 @@ int main() {
 			cin >> MAP[i][j];
 		}
 	}
-
 	for (int i = 0; i < k; i++) {
 		cin >> arr[i];
 	}
-
-	
-
 	for (int i = 0; i < k; i++) {
 		int d1 = DICE[1];
 		int d2 = DICE[2];
@@ -31,9 +27,7 @@ int main() {
 		int dir = arr[i];
 		int nx = x + dx[dir];
 		int ny = y + dy[dir];
-
 		if (nx < 0 || ny < 0 || nx >= n || ny >= m) continue;
-
 		if (dir == 1) {
 			DICE[1] = d4;
 			DICE[3] = d1;
@@ -58,7 +52,6 @@ int main() {
 			DICE[5] = d1;
 			DICE[6] = d5;
 		}
-
 		if (MAP[nx][ny] != 0) {
 			DICE[6] = MAP[nx][ny];
 			MAP[nx][ny] = 0;
@@ -66,7 +59,6 @@ int main() {
 		else {
 			MAP[nx][ny] = DICE[6];
 		}
-
 		cout << DICE[1] << '\n';
 		x = nx;
 		y = ny;

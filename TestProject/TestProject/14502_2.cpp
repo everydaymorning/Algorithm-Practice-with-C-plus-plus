@@ -50,8 +50,6 @@ void bfs() {
 			TEMP[nx][ny] = 2;
 		}
 	}
-
-	
 }
 
 void dfs(int cnt) {
@@ -72,7 +70,6 @@ void dfs(int cnt) {
 		}
 	}
 }
-
 void INPUT() {
 	cin >> n >> m;
 	for (int i = 0; i < n; i++) {
@@ -82,7 +79,6 @@ void INPUT() {
 		}
 	}
 }
-
 int main() {
 	cin.tie(0);
 	ios::sync_with_stdio(0);

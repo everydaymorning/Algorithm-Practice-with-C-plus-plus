@@ -11,7 +11,8 @@ void dfs(int x, int y, int cnt, int total) {
 		MAX = max(MAX, total);
 		return;
 	}
-	for (int dir = 0; dir < 4; dir++) {
+
+	for (int dir = 0; dir < 2; dir++) {
 		int nx = x + dx[dir];
 		int ny = y + dy[dir];
 		if (nx < 0 || ny < 0 || nx >= n || ny >= m) continue;
@@ -56,7 +57,6 @@ int main() {
 			}
 		}
 	}
-
 	cout << MAX;
 	return 0;
 }
