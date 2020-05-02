@@ -1686,5 +1686,26 @@
     <ClCompile Include="15683_2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="2019_winter3.cpp">
+      <Filter>소스 파일\kakao_practice</Filter>
+    </ClCompile>
+    <ClCompile Include="2019_3.cpp">
+      <Filter>소스 파일\kakao_practice</Filter>
+    </ClCompile>
+    <ClCompile Include="15684_2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="15685_2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="15686_2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="16234_2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="16235_2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

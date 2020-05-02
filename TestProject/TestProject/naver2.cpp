@@ -10,7 +10,6 @@ int main() {
 	id_list.push_back("ELLE ELLE ELLE");
 	id_list.push_back("MAY");
 
-
 	int k;
 	cin >> k;
 
