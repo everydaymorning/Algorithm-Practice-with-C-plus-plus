@@ -4,7 +4,7 @@ int n, m, K;
 int MAP[11][11];
 int eat[11][11];
 deque<int> tree[11][11];
-deque<int> dead_tree[11][11];
+vector<int> dead_tree[11][11];
 int dx[8] = { -1,-1,-1,0,0,1,1,1 };
 int dy[8] = { -1,0,1,-1,1,-1,0,1 };
 void spring() {
@@ -24,6 +24,7 @@ void spring() {
 		}
 	}
 }
+
 void summer() {
 	for (int i = 1; i <= n; i++) {
 		for (int j = 1; j <= n; j++) {
@@ -73,7 +74,7 @@ void count_tree() {
 	}
 	cout << sum;
 }
-int main() {
+void INPUT() {
 	cin >> n >> m >> K;
 	for (int i = 1; i <= n; i++) {
 		for (int j = 1; j <= n; j++) {
@@ -87,7 +88,9 @@ int main() {
 		cin >> x >> y >> z;
 		tree[x][y].push_back(z);
 	}
+}
 
+void solve() {
 	while (K--) {
 		spring();
 		summer();
@@ -95,5 +98,14 @@ int main() {
 		winter();
 	}
 	count_tree();
+}
+void solution() {
+	INPUT();
+	solve();
+}
+int main() {
+	cin.tie(0);
+	ios::sync_with_stdio(0);
+	solution();
 	return 0;
 }
