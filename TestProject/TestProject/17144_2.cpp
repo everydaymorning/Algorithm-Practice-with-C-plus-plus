@@ -12,15 +12,12 @@ void move_up() {
 	for (int i = mise_x[0] - 1; i > 0; i--) {
 		MAP[i][0] = MAP[i - 1][0];
 	}
-
 	for (int j = 0; j < c - 1; j++) {
 		MAP[0][j] = MAP[0][j + 1];
 	}
-
 	for (int i = 0; i < mise_x[0]; i++) {
 		MAP[i][c - 1] = MAP[i + 1][c - 1];
 	}
-
 	for (int j = c - 1; j > 1; j--) {
 		MAP[mise_x[0]][j] = MAP[mise_x[0]][j - 1];
 	}
@@ -31,15 +28,12 @@ void move_down() {
 	for (int i = mise_x[1] + 1; i < r - 1; i++) {
 		MAP[i][0] = MAP[i + 1][0];
 	}
-
 	for (int j = 0; j < c - 1; j++) {
 		MAP[r - 1][j] = MAP[r - 1][j + 1];
 	}
-
 	for (int i = r - 1; i > mise_x[1]; i--) {
 		MAP[i][c - 1] = MAP[i - 1][c - 1];
 	}
-
 	for (int j = c - 1; j > 1; j--) {
 		MAP[mise_x[1]][j] = MAP[mise_x[1]][j - 1];
 	}
@@ -102,7 +96,6 @@ int main() {
 			}
 		}
 		count();
-
 		move_up();
 		move_down();
 	}

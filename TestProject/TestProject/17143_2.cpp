@@ -13,7 +13,6 @@ struct shark {
 };
 bool check[10001];
 deque<shark> TEMP[101][101];
-
 bool cmp(shark s1, shark s2) {
 	return s1.size > s2.size;
 }
@@ -39,21 +38,12 @@ int main() {
 	while (1) {
 		idx++;
 		if (idx > c) break;
-		/*cout << "움직이기 전" << '\n';
-		for (int i = 1; i <= r; i++) {
-			for (int j = 1; j <= c; j++) {
-				if (TEMP[i][j].empty()) continue;
-				cout << "i: " << i << "  j: " << j << "   num: " << TEMP[i][j][0].num << "  speed: " << TEMP[i][j][0].speed << "  dir: " << TEMP[i][j][0].dir << "  size: " << TEMP[i][j][0].size << '\n';
-			}
-		}*/
 		for (int i = 1; i <= r; i++) {
 			if (TEMP[i][idx].empty()) continue;
 			sum += TEMP[i][idx][0].size;
-			//cout << "잡은 놈 :::" << " x: " << i << "  y: " << idx << "  num: " << TEMP[i][idx][0].num << '\n';
 			TEMP[i][idx].pop_back();
 			break;
 		}
-
 		for (int i = 1; i <= r; i++) {
 			for (int j = 1; j <= c; j++) {
 				if (TEMP[i][j].empty()) continue;
@@ -61,7 +51,6 @@ int main() {
 					if (check[TEMP[i][j][k].num]) continue;
 					int x = i;
 					int y = j;
-					//cout << "i: " << i << "  j: " << j << '\n';
 					int num = TEMP[i][j][k].num;
 					int dir = TEMP[i][j][k].dir;
 					int speed = TEMP[i][j][k].speed;
@@ -93,10 +82,7 @@ int main() {
 					tmp.speed = speed;
 					check[num] = true;
 					TEMP[x][y].push_front(tmp);
-					//cout << "x : " << x << "  y: " << y << '\n';
 				}
-				
-
 			}
 		}
 		for (int i = 1; i <= r; i++) {
@@ -109,18 +95,9 @@ int main() {
 						TEMP[i][j].pop_back();
 					}
 				}
-				
 			}
 		}
-
 		memset(check, false, sizeof(check));
-		/*cout << idx << "초 후 " << '\n';
-		for (int i = 1; i <= r; i++) {
-			for (int j = 1; j <= c; j++) {
-				if (TEMP[i][j].empty()) continue;
-				cout << "i: " << i << "  j: " << j << " num: " << TEMP[i][j][0].num << "  speed: " << TEMP[i][j][0].speed << "  dir: " << TEMP[i][j][0].dir << "  size: " << TEMP[i][j][0].size << '\n';
-			}
-		}*/
 	}
 	cout << sum;
 	return 0;

@@ -31,11 +31,11 @@ void bfs() {
 		TEMP[x][y] = 2;
 	}
 	while (!q.empty()) {
+		
 		int x = q.front().first.first;
 		int y = q.front().first.second;
 		int cnt = q.front().second;
 		q.pop();
-
 		for (int dir = 0; dir < 4; dir++) {
 			int nx = x + dx[dir];
 			int ny = y + dy[dir];
@@ -55,21 +55,12 @@ void bfs() {
 		dist[x][y] = -5;
 	}
 
-	/*for (int i = 0; i < n; i++) {
-		for (int j = 0; j < n; j++) {
-			cout << dist[i][j] << " ";
-		}
-		cout << '\n';
-	}
-	cout << '\n';*/
-
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < n; j++) {
 			MAX_TMP = max(MAX_TMP, dist[i][j]);
 		}
 	}
 	bool flag = false;
-
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < n; j++) {
 			if (TEMP[i][j] == 0) {
@@ -117,6 +108,4 @@ int main() {
 	if (ans == MAX) cout << "-1";
 	else cout << ans;
 	return 0;
-
-
 }

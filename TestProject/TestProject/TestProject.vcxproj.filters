@@ -1725,5 +1725,8 @@
     <ClCompile Include="17779_3.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="2019_winter4.cpp">
+      <Filter>소스 파일\kakao_practice</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -3,7 +3,6 @@ using namespace std;
 int MAP[21][21];
 bool check[21][21];
 int n;
-
 struct baby {
 	int x;
 	int y;
@@ -11,7 +10,6 @@ struct baby {
 	int eat_num;
 	int dist;
 };
-
 int dx[4] = { -1,1,0,0 };
 int dy[4] = { 0,0,-1,1 };
 baby baby_shark;
@@ -52,12 +50,10 @@ bool bfs() {
 			}
 			q.push({ {nx,ny},{cnt + 1} });
 			check[nx][ny] = true;
-			
 		}
 	}
 	if (flag) {
 		sort(v.begin(), v.end(), cmp);
-
 		baby_shark.x = v[0].first.first;
 		baby_shark.y = v[0].first.second;
 		baby_shark.dist += v[0].second.second;
