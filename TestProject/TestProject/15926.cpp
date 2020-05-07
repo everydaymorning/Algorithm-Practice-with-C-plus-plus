@@ -8,11 +8,10 @@ int main() {
 	stack<char> s;
 	int num = 0;
 	int mx = 0;
-	bool flag = true;
+	bool flag = false;
 	for (int i = 0; i < str.size(); i++) {
 		if (str[i] == '(') {
-			if (!s.empty() && s.top() == '(' && flag) {
-				flag = false;
+			if (flag) {
 				num = 0;
 			}
 			s.push(str[i]);
@@ -23,13 +22,15 @@ int main() {
 				continue;
 			}
 			if (s.top() == '(') {
-				if (flag) {
-					s.pop();
-					num += 2;
-					mx = max(mx, num);
+				s.pop();
+				num += 2;
+				if (!s.empty() && s.top() == '(') {
+					flag = true;
+					continue;
 				}
-				flag = true;
+				flag = false;
 			}
+			mx = max(mx, num);
 		}
 	}
 	mx = max(mx, num);

@@ -1,20 +1,20 @@
 #include <bits/stdc++.h>
 using namespace std;
+map<long long, long long> mp;
 
-struct room {
-	int idx;
-	long long num;
-};
-
-struct cmp {
-	bool operator()(room a, room b) {
-		return a.num < b.num;
-
-	}
-};
+long long find(long long a) {
+	if (mp[a] == 0) return a;
+	return mp[a] = find(mp[a]);
+}
 vector<long long> solution(long long k, vector<long long> room_number) {
+
 	vector<long long> answer;
 	
+	for (int i = 0; i < room_number.size(); i++) {
+		long long tmp = find(room_number[i]);
+		answer.push_back(tmp);
+		mp[tmp] = tmp + 1;
+	}
 
 	
 	return answer;
