@@ -5,35 +5,21 @@ int main() {
 	cin >> n;
 	string str;
 	cin >> str;
-	stack<char> s;
-	int num = 0;
+	stack<int> s;
 	int mx = 0;
-	bool flag = false;
+	s.push(-1);
 	for (int i = 0; i < str.size(); i++) {
-		if (str[i] == '(') {
-			if (flag) {
-				num = 0;
+		if (str[i] == '(') s.push(i);
+		else {
+			s.pop();
+			if (!s.empty()) {
+				mx = max(mx, i - s.top());
 			}
-			s.push(str[i]);
-		}
-		else if (str[i] == ')') {
-			if (s.empty()) {
-				num = 0;
-				continue;
+			else {
+				s.push(i);
 			}
-			if (s.top() == '(') {
-				s.pop();
-				num += 2;
-				if (!s.empty() && s.top() == '(') {
-					flag = true;
-					continue;
-				}
-				flag = false;
-			}
-			mx = max(mx, num);
 		}
 	}
-	mx = max(mx, num);
 	cout << mx;
 	return 0;
 }
