@@ -37,6 +37,9 @@
     <Filter Include="소스 파일\soma2">
       <UniqueIdentifier>{23dfca41-2df3-4470-a189-a45b2bed0f31}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\kakao_intern">
+      <UniqueIdentifier>{2197c5f8-4101-4cab-ba7b-2f955221e0d6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test.cpp">
@@ -1739,6 +1742,21 @@
     </ClCompile>
     <ClCompile Include="15926.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="kakao_1.cpp">
+      <Filter>소스 파일\kakao_intern</Filter>
+    </ClCompile>
+    <ClCompile Include="kakao_2.cpp">
+      <Filter>소스 파일\kakao_intern</Filter>
+    </ClCompile>
+    <ClCompile Include="kakao_3.cpp">
+      <Filter>소스 파일\kakao_intern</Filter>
+    </ClCompile>
+    <ClCompile Include="kakao_4.cpp">
+      <Filter>소스 파일\kakao_intern</Filter>
+    </ClCompile>
+    <ClCompile Include="kakao_5.cpp">
+      <Filter>소스 파일\kakao_intern</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
