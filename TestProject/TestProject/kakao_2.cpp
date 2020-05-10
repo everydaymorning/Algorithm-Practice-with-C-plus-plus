@@ -7,7 +7,6 @@ vector<char> op1 = { '+', '-', '*' };
 long long TEMP[101];
 bool check[1000];
 long long MAX;
-
 long long solution(string expression) {
 	string s = "";
 	for (int i = 0; i < expression.size(); i++) {
@@ -46,7 +45,6 @@ long long solution(string expression) {
 	} while (next_permutation(op1.begin(), op1.end()));
 	return MAX;
 }
-
 int main() {
 	string str = "100-200*300-500+20";
 	long long ans = solution(str);

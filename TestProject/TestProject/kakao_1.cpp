@@ -49,7 +49,6 @@ int bfs_left(int a, int b, int idx) {
 	}
 	return 0;
 }
-
 int bfs_right(int a, int b, int idx) {
 	queue<pair<pair<int, int>, int>> RIGHT;
 	RIGHT.push({ {a,b},0 });
@@ -139,7 +138,6 @@ string solution(vector<int> numbers, string hand) {
 	}
 	return answer;
 }
-
 int main() {
 	vector<int> v = { 7, 0, 8, 2, 8, 3, 1, 5, 7, 6, 2 };
 	string h = "left";
