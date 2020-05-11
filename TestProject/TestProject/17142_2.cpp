@@ -105,6 +105,7 @@ int main() {
 		}
 	}
 	dfs(0, 0);
+
 	if (ans == MAX) cout << "-1";
 	else cout << ans;
 	return 0;

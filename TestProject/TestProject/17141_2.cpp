@@ -12,7 +12,6 @@ int dy[4] = { 0,0,-1,1 };
 bool flag;
 vector<pair<int, int>> virus;
 vector<pair<int, int>> tmp_q;
-
 void setting() {
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < n; j++) {
@@ -76,7 +75,6 @@ void dfs(int idx, int cnt) {
 
 	if (cnt == m) {
 		setting();
-
 		bfs();
 		memset(check, false, sizeof(check));
 		memset(dist, 0, sizeof(dist));
@@ -92,7 +90,6 @@ void dfs(int idx, int cnt) {
 		dfs(i, cnt + 1);
 		tmp_q.pop_back();
 		virus_check[i] = false;
-
 	}
 }
 int main() {

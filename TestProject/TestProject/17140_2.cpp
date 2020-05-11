@@ -5,7 +5,6 @@ int MAP[102][102];
 int TEMP[102][102];
 int sum[102];
 vector<pair<int, int>> v;
-
 bool cmp(pair<int, int> p1, pair<int, int> p2) {
 	if (p1.second == p2.second) return p1.first < p2.first;
 	return p1.second < p2.second;
@@ -28,14 +27,6 @@ int main() {
 
 		if (row >= col) {
 			int len = 0;
-			/*for (int i = 1; i <= max(row,col); i++) {
-				for (int j = 1; j <= max(row, col); j++) {
-					cout << MAP[i][j] << " ";
-				}
-				cout << '\n';
-			}*/
-			//cout << "R" << '\n';
-			//cout << "row: " << row << "  col: " << col << " max: " << max(row, col) << '\n';
 			for (int i = 1; i <= max(row, col); i++) {
 				for (int j = 1; j <= max(row, col); j++) {
 					if (MAP[i][j] == 0) continue;
@@ -44,10 +35,8 @@ int main() {
 				for (int j = 1; j <= 101; j++) {
 					if (sum[j] == 0) continue;
 					v.push_back({ j,sum[j] });
-					//cout << "j: " << j << "  sum: " << sum[j] << '\n';
 				}
 				sort(v.begin(), v.end(), cmp);
-				
 				for (int j = 1; j <= 101; j++) {
 					MAP[i][j] = 0;
 				}
@@ -55,7 +44,6 @@ int main() {
 				for (int j = 0; j < v.size(); j++) {
 					int a = v[j].first;
 					int b = v[j].second;
-					//cout << "a: " << a << "  b: " << b << '\n';
 					MAP[i][idx] = a;
 					MAP[i][idx + 1] = b;
 					idx += 2;
@@ -67,17 +55,9 @@ int main() {
 				}
 			}
 			col = len;
-			/*for (int i = 1; i <= max(row, col); i++) {
-				for (int j = 1; j <= max(row, col); j++) {
-					cout << MAP[i][j] << " ";
-				}
-				cout << '\n';
-			}
-			cout << "row: " << row << "  col: " << col << '\n';*/
 		}
 		else {
 			int len = 0;
-			//cout << "C" << '\n';
 			for (int i = 1; i <= max(row,col); i++) {
 				for (int j = 1; j <= max(row,col); j++) {
 					TEMP[i][j] = MAP[j][i];
@@ -93,7 +73,6 @@ int main() {
 				for (int j = 1; j <= 101; j++) {
 					if (sum[j] == 0) continue;
 					v.push_back({ j,sum[j] });
-					//cout << "j: " << j << "  sum: " << sum[j] << '\n';
 				}
 				sort(v.begin(), v.end(), cmp);
 
@@ -104,7 +83,6 @@ int main() {
 				for (int j = 0; j < v.size(); j++) {
 					int a = v[j].first;
 					int b = v[j].second;
-					//cout << "a: " << a << "  b: " << b << '\n';
 					TEMP[i][idx] = a;
 					TEMP[i][idx + 1] = b;
 					idx += 2;
@@ -117,19 +95,11 @@ int main() {
 			}
 			row = len;
 
-			/*for (int i = 1; i <= max(row, col); i++) {
-				for (int j = 1; j <= max(row, col); j++) {
-					cout << TEMP[i][j] << " ";
-				}
-				cout << '\n';
-			}*/
-
 			for (int i = 1; i <= max(row, col); i++) {
 				for (int j = 1; j <= max(row, col); j++) {
 					MAP[j][i] = TEMP[i][j];
 				}
 			}
-			//cout << "row: " << row << "  col: " << col << '\n';
 		}
 		
 	}
