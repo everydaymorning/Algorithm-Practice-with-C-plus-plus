@@ -14,8 +14,11 @@ int main() {
 	d[0] = 1;
 	for (int i = 0; i < n; i++) {
 		for (int j = s[i]; j <= k; j++) {
-			if(j >= s[i])
+			cout << "i: " << i << "  j: " << j << '\n';
+			if (j >= s[i]) {
+				cout << "j: " << j << "  d[j - s[i]]: " << d[j - s[i]] << '\n';
 				d[j] = d[j] + d[j - s[i]];
+			}
 		}
 	}
 
