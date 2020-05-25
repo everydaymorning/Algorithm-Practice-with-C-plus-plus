@@ -1758,5 +1758,17 @@
     <ClCompile Include="kakao_5.cpp">
       <Filter>소스 파일\kakao_intern</Filter>
     </ClCompile>
+    <ClCompile Include="test_seq.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="test_bin.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="test_merge.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="11404.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
