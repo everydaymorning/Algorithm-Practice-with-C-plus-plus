@@ -2,11 +2,8 @@
 using namespace std;
 int dp[1001];
 int main() {
-	int number[3] = { 1,2,3 };
-
 	int t;
 	cin >> t;
-
 	for (int i = 0; i < t; i++) {
 		int n;
 		cin >> n;
