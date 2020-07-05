@@ -18,6 +18,7 @@ bool promising(int idx) {
 	return flag;
 }
 void queens(int idx) {
+
 	if (promising(idx)) {
 		if (idx == n) {
 			total++;
