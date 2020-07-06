@@ -8,13 +8,15 @@ int total; // 경우의 수를 저장할 변수
 bool promising(int idx) {
 	int k = 1;
 	bool flag = true;
-
+	cout << "idx: " << idx << '\n';
+	cout << "col[" << idx << "]: " << col[idx] << "  col[" << k << "]: " << col[k] << '\n';
 	while (k < idx && flag) {
 		if ((col[idx] == col[k]) || abs(col[idx] - col[k]) == idx - k) {
 			flag = false;
 		}
 		k++;
 	}
+	cout << "k: " << k << '\n';
 	return flag;
 }
 void queens(int idx) {
@@ -32,6 +34,7 @@ void queens(int idx) {
 		else {
 			for (int i = 1; i <= n; i++) {
 				col[idx + 1] = i;
+				cout << "col[" << idx+1 << "]: " << col[idx + 1] << '\n';
 				queens(idx + 1);
 			}
 		}
